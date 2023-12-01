@@ -78,9 +78,19 @@
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
     <LinkIncremental>true</LinkIncremental>
+    <Allegro_AddonImage>true</Allegro_AddonImage>
+    <Allegro_AddonTTF>true</Allegro_AddonTTF>
+    <Allegro_AddonPrimitives>true</Allegro_AddonPrimitives>
+    <Allegro_AddonAudio>true</Allegro_AddonAudio>
+    <Allegro_AddonFont>true</Allegro_AddonFont>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
     <LinkIncremental>false</LinkIncremental>
+    <Allegro_AddonImage>true</Allegro_AddonImage>
+    <Allegro_AddonTTF>true</Allegro_AddonTTF>
+    <Allegro_AddonPrimitives>true</Allegro_AddonPrimitives>
+    <Allegro_AddonAudio>true</Allegro_AddonAudio>
+    <Allegro_AddonFont>true</Allegro_AddonFont>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -139,10 +149,24 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="E:\work\krampushack_2023\krampushack2023_game\krampushack2023_game\BaseLevel.cpp" />
+    <ClCompile Include="E:\work\krampushack_2023\krampushack2023_game\krampushack2023_game\scene.cpp" />
+    <ClCompile Include="input.cpp" />
     <ClCompile Include="main.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="E:\work\krampushack_2023\krampushack2023_game\krampushack2023_game\BaseLevel.h" />
+    <ClInclude Include="E:\work\krampushack_2023\krampushack2023_game\krampushack2023_game\BaseScene.h" />
+    <ClInclude Include="E:\work\krampushack_2023\krampushack2023_game\krampushack2023_game\GameScene.h" />
+    <ClInclude Include="E:\work\krampushack_2023\krampushack2023_game\krampushack2023_game\globals.h" />
+    <ClInclude Include="E:\work\krampushack_2023\krampushack2023_game\krampushack2023_game\MenuScene.h" />
+    <ClInclude Include="E:\work\krampushack_2023\krampushack2023_game\krampushack2023_game\scene.h" />
+    <ClInclude Include="E:\work\krampushack_2023\krampushack2023_game\krampushack2023_game\scene_types.h" />
+    <ClInclude Include="input.h" />
+    <ClInclude Include="main.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
