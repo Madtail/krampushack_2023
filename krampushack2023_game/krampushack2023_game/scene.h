@@ -23,7 +23,7 @@ public:
 	Scene(SCENE_TYPE type);
 	~Scene();
 
-	bool Update(ALLEGRO_EVENT event);
+	bool Update(ALLEGRO_EVENT event, int playerKeyUp);
 	void Draw();
 
 	InputState input;

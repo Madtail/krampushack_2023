@@ -20,7 +20,7 @@ public:
 	//virtual ~BaseScene();
 
 	// Returns true when a scene change is triggered.
-	virtual bool Update(const InputState& state, ALLEGRO_EVENT event) = 0;
+	virtual bool Update(const InputState& state, ALLEGRO_EVENT event, int playerKeyUp) = 0;
 	virtual void Draw() = 0;
 
 	// Function to change scene depending on conditions

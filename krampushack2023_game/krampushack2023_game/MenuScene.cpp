@@ -10,7 +10,7 @@ MenuScene::~MenuScene()
 
 }
 
-bool MenuScene::Update(const InputState& state, ALLEGRO_EVENT event)
+bool MenuScene::Update(const InputState& state, ALLEGRO_EVENT event, int playerKeyUp)
 {
 	// return true when the right key has been pressed otherwise false
 

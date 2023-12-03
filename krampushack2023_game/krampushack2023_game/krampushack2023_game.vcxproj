@@ -149,29 +149,29 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="BaseLevel.cpp" />
     <ClCompile Include="BaseScene.cpp" />
-    <ClCompile Include="E:\work\krampushack_2023\krampushack2023_game\krampushack2023_game\BaseLevel.cpp" />
-    <ClCompile Include="E:\work\krampushack_2023\krampushack2023_game\krampushack2023_game\scene.cpp" />
     <ClCompile Include="GameScene.cpp" />
     <ClCompile Include="input.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="MenuScene.cpp" />
     <ClCompile Include="player.cpp" />
+    <ClCompile Include="scene.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="E:\work\krampushack_2023\krampushack2023_game\krampushack2023_game\BaseLevel.h" />
-    <ClInclude Include="E:\work\krampushack_2023\krampushack2023_game\krampushack2023_game\BaseScene.h" />
-    <ClInclude Include="E:\work\krampushack_2023\krampushack2023_game\krampushack2023_game\GameScene.h" />
-    <ClInclude Include="E:\work\krampushack_2023\krampushack2023_game\krampushack2023_game\globals.h" />
-    <ClInclude Include="E:\work\krampushack_2023\krampushack2023_game\krampushack2023_game\MenuScene.h" />
-    <ClInclude Include="E:\work\krampushack_2023\krampushack2023_game\krampushack2023_game\scene.h" />
-    <ClInclude Include="E:\work\krampushack_2023\krampushack2023_game\krampushack2023_game\scene_types.h" />
+    <ClInclude Include="BaseLevel.h" />
+    <ClInclude Include="BaseScene.h" />
+    <ClInclude Include="GameScene.h" />
+    <ClInclude Include="globals.h" />
     <ClInclude Include="input.h" />
     <ClInclude Include="main.h" />
+    <ClInclude Include="MenuScene.h" />
     <ClInclude Include="player.h" />
+    <ClInclude Include="scene.h" />
+    <ClInclude Include="scene_types.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

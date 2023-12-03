@@ -10,7 +10,7 @@ public:
 	MenuScene();
 	~MenuScene();
 
-	bool Update(const InputState& keyboardState, ALLEGRO_EVENT event) override;
+	bool Update(const InputState& keyboardState, ALLEGRO_EVENT event, int playerKeyUp) override;
 	void Draw() override;
 
 	SCENE_TYPE nextScene(SCENE_TYPE type) override;

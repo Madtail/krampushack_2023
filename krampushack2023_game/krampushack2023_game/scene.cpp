@@ -11,7 +11,7 @@ Scene::~Scene()
 	
 }
 
-bool Scene::Update(ALLEGRO_EVENT event)
+bool Scene::Update(ALLEGRO_EVENT event, int playerKeyUp)
 {
 	bool keepRunning{ true };
 	
@@ -22,7 +22,7 @@ bool Scene::Update(ALLEGRO_EVENT event)
 			break;
 		
 		case SCENE_TYPE::GAME:
-			gameScene.Update(input, event);
+			gameScene.Update(input, event, playerKeyUp);
 			break;
 
 		case SCENE_TYPE::QUIT:

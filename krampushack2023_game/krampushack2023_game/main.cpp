@@ -16,6 +16,8 @@ int main(int argc, char const** argv)
 
 	int frames_skipped{ 0 };
 
+	int playerKeyUp = 0;
+
 	Scene director(SCENE_TYPE::GAME);
 
 	bool running{ true };
@@ -37,13 +39,16 @@ int main(int argc, char const** argv)
 			break;
 		case ALLEGRO_EVENT_KEY_UP:
 			director.input.unsetKey(ev.keyboard.keycode);
+			if (ev.keyboard.keycode == (ALLEGRO_KEY_W) || (ALLEGRO_KEY_S) || (ALLEGRO_KEY_A) || (ALLEGRO_KEY_D)) {
+				playerKeyUp = ev.keyboard.keycode;
+			}
 			break;
 		case ALLEGRO_EVENT_DISPLAY_CLOSE:
 			running = false;
 			break;
 		case ALLEGRO_EVENT_TIMER:
-			running = director.Update(ev);
-
+			running = director.Update(ev, playerKeyUp);
+			playerKeyUp = 0;
 			draw = true;
 			break;
 		}
