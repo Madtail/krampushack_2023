@@ -10,6 +10,10 @@ int main(int argc, char const** argv)
 
 	al_start_timer(timer);
 
+	double fps = 0;
+	int frames_done = 0;
+	double old_time = al_get_time();
+
 	int frames_skipped{ 0 };
 
 	Scene director(SCENE_TYPE::GAME);
@@ -17,6 +21,7 @@ int main(int argc, char const** argv)
 	bool running{ true };
 	bool draw{ false };
 	while (running) {
+
 		ALLEGRO_EVENT ev;
 		al_wait_for_event(queue, &ev);
 
@@ -32,29 +37,42 @@ int main(int argc, char const** argv)
 			break;
 		case ALLEGRO_EVENT_KEY_UP:
 			director.input.unsetKey(ev.keyboard.keycode);
-
 			break;
 		case ALLEGRO_EVENT_DISPLAY_CLOSE:
 			running = false;
 			break;
 		case ALLEGRO_EVENT_TIMER:
-			running = //director.Update();
+			running = director.Update(ev);
 
 			draw = true;
 			break;
 		}
 
 		if (draw && al_is_event_queue_empty(queue)) {
-			draw = false;
 
-			ALLEGRO_COLOR color = al_map_rgb_f(1.0f, 0.0f, 1.0f);
+			double game_time = al_get_time();
+			if ((game_time - old_time) >= 1.0) {
+				fps = frames_done / (game_time - old_time);
+				frames_done = 0;
+				old_time = game_time;
+			}
+			frames_done++;
+	
+			ALLEGRO_COLOR color = al_map_rgb_f(0.0f, 0.0f, 0.0f);
 			al_clear_to_color(color);
 
-			//director.Draw();
+			std::string fps_text = "FPS: " + std::to_string(fps);
+
+			// draw fps
+			al_draw_text(font, al_map_rgb(255, 255, 255), 0, 0, 0, fps_text.c_str());
+
+			// Main draw
+			director.Draw();
 
 			al_flip_display();
-		}
 
+			draw = false;
+		}
 	}
 	return 0;
 }
@@ -92,6 +110,7 @@ void startSystems()
 	display = (ALLEGRO_DISPLAY*)must_exist(al_create_display(SCREEN_W, SCREEN_H), "FATAL ERROR: display ");
 	queue = (ALLEGRO_EVENT_QUEUE*)must_exist(al_create_event_queue(), "FATAL ERROR: queue ");
 	timer = (ALLEGRO_TIMER*)must_exist(al_create_timer(1.0 / FPS), "FATAL ERROR: timer ");
+	font = (ALLEGRO_FONT*)must_exist(al_create_builtin_font(), "FATAL ERROR: font");
 
 	must_init(al_install_keyboard(), "KEYBOARD DRIVER ERROR!");
 	must_init(al_init_image_addon(), "IMAGE ADD-ON ERROR!");

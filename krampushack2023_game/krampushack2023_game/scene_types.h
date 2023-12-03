@@ -2,4 +2,5 @@
 // Include all scene types here
 #include "BaseScene.h"
 #include "GameScene.h"
+#include "MenuScene.h"
 

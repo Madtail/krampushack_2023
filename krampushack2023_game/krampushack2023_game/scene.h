@@ -3,6 +3,8 @@
 #define SCENE_H
 
 #include <vector>
+#include <iostream>
+#include <string>
 
 #include <allegro5/allegro.h>
 #include <allegro5/allegro_color.h>
@@ -21,15 +23,17 @@ public:
 	Scene(SCENE_TYPE type);
 	~Scene();
 
-	bool Update();
+	bool Update(ALLEGRO_EVENT event);
 	void Draw();
 
 	InputState input;
+	//Graphics graphics;
 
 private:
 	SCENE_TYPE current_scene;
 	// List scene types here as objects
-
+	MenuScene menuScene;
+	GameScene gameScene;
 };
 
 #endif // SCENE_H

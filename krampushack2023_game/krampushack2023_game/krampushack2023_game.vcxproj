@@ -149,10 +149,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="BaseScene.cpp" />
     <ClCompile Include="E:\work\krampushack_2023\krampushack2023_game\krampushack2023_game\BaseLevel.cpp" />
     <ClCompile Include="E:\work\krampushack_2023\krampushack2023_game\krampushack2023_game\scene.cpp" />
+    <ClCompile Include="GameScene.cpp" />
     <ClCompile Include="input.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="MenuScene.cpp" />
+    <ClCompile Include="player.cpp" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -167,6 +171,7 @@
     <ClInclude Include="E:\work\krampushack_2023\krampushack2023_game\krampushack2023_game\scene_types.h" />
     <ClInclude Include="input.h" />
     <ClInclude Include="main.h" />
+    <ClInclude Include="player.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
