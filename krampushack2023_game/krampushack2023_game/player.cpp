@@ -18,27 +18,7 @@ Player::~Player()
 
 void Player::move()
 {
-	std::cout << "VelX: " << velX << std::endl;
-	std::cout << "VelY: " << velY << std::endl;
 	
-	if (velX > player_vel && velX != 0) {
-		velX = player_vel;
-	}
-	else if (velX < player_vel && velX != 0)
-	{
-		velX = -player_vel;
-	}
-
-	if (velY > player_vel && velY != 0) {
-		velY = player_vel;
-	}
-	else if (velY < player_vel && velY != 0)
-	{
-		velY = -player_vel;
-	}
-	
-	posX += velX;
-	posY += velY;
 }
 
 void Player::update(const InputState &keyboardState, ALLEGRO_EVENT event, int playerKeyUp)
@@ -63,28 +43,43 @@ void Player::update(const InputState &keyboardState, ALLEGRO_EVENT event, int pl
 		velX += player_vel;
 	}
 	
-	// Does nothing
-	std::cout << "KEY UP: " << playerKeyUp << std::endl;
 		switch (playerKeyUp)
 		{
 		case ALLEGRO_KEY_W:
 			velY += player_vel;
-			std::cout << "TEST" << std::endl;
 			break;
 		case ALLEGRO_KEY_S:
 			velY -= player_vel;
-			std::cout << "TEST" << std::endl;
 			break;
 		case ALLEGRO_KEY_A:
 			velX += player_vel;
-			std::cout << "TEST" << std::endl;
 			break;
 		case ALLEGRO_KEY_D:
 			velX -= player_vel;
-			std::cout << "TEST" << std::endl;
 			break;
 		}
 	
+		std::cout << "VelX: " << velX << std::endl;
+		std::cout << "VelY: " << velY << std::endl;
+
+		if (velX > player_vel && velX != 0) {
+			velX = player_vel;
+		}
+		else if (velX < player_vel && velX != 0)
+		{
+			velX = -player_vel;
+		}
+
+		if (velY > player_vel && velY != 0) {
+			velY = player_vel;
+		}
+		else if (velY < player_vel && velY != 0)
+		{
+			velY = -player_vel;
+		}
+
+		posX += velX;
+		posY += velY;
 }
 
 void Player::draw(ALLEGRO_BITMAP* playerSprite)

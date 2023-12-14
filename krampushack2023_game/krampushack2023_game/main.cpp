@@ -39,7 +39,7 @@ int main(int argc, char const** argv)
 			break;
 		case ALLEGRO_EVENT_KEY_UP:
 			director.input.unsetKey(ev.keyboard.keycode);
-			if (ev.keyboard.keycode == (ALLEGRO_KEY_W) || (ALLEGRO_KEY_S) || (ALLEGRO_KEY_A) || (ALLEGRO_KEY_D)) {
+			if (ev.keyboard.keycode == ((ALLEGRO_KEY_W) || (ALLEGRO_KEY_S) || (ALLEGRO_KEY_A) || (ALLEGRO_KEY_D))) {
 				playerKeyUp = ev.keyboard.keycode;
 			}
 			break;

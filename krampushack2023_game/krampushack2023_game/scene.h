@@ -27,7 +27,13 @@ public:
 	void Draw();
 
 	InputState input;
-	//Graphics graphics;
+	
+	struct Camera
+	{
+		float camera_x;
+		float camera_y;
+	};
+	Camera camera;
 
 private:
 	SCENE_TYPE current_scene;

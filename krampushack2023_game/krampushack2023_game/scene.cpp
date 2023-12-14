@@ -4,6 +4,8 @@
 Scene::Scene(SCENE_TYPE type) 
 {
 	current_scene = type;
+	camera.camera_x = 0;
+	camera.camera_y = 0;
 }
 
 Scene::~Scene() 
