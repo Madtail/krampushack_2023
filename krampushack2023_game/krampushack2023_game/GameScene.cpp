@@ -22,7 +22,6 @@ bool GameScene::Update(const InputState& keyboard_state, ALLEGRO_EVENT event, in
 	// return true when the right key has been pressed otherwise false
 
 	player.update(keyboard_state, event, playerKeyUp);
-	player.move();
 
 	// temporary
 	return true;

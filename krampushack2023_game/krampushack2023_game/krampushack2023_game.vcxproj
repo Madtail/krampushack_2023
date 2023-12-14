@@ -160,6 +160,7 @@
     <ClCompile Include="MenuScene.cpp" />
     <ClCompile Include="player.cpp" />
     <ClCompile Include="scene.cpp" />
+    <ClCompile Include="Vector2D.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="BaseLevel.h" />
@@ -172,6 +173,7 @@
     <ClInclude Include="player.h" />
     <ClInclude Include="scene.h" />
     <ClInclude Include="scene_types.h" />
+    <ClInclude Include="Vector2D.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

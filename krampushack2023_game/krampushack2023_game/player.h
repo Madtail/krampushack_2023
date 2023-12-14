@@ -2,9 +2,9 @@
 #ifndef PLAYER_H
 #define PLAYER_H
 
-
+#include "globals.h"
 #include "input.h"
-
+#include "Vector2D.h"
 
 class Player
 {
@@ -13,17 +13,20 @@ public:
 	~Player();
 
 	void update(const InputState &keyboardState, ALLEGRO_EVENT event, int playerKeyUp);
-	void move();
 	void draw(ALLEGRO_BITMAP* playerSprite);
+
+	// Get and set player position
+	Vector2D getPosition();
+	void setPosition(Vector2D input);
+	Vector2D getVelocity();
+	void setVelocity(Vector2D input);
 
 	const int player_vel = 5;
 
 private:
-	float posX;
-	float posY;
-
-	float velX;
-	float velY;
+	
+	Vector2D position;
+	Vector2D velocity;
 
 };
 

@@ -15,6 +15,7 @@
 
 #include "input.h"
 #include "scene_types.h"
+#include "Vector2D.h"
 // This is the scene director or manager, "scenemain"
 
 class Scene
