@@ -23,6 +23,16 @@ public:
 
 	const int player_vel = 5;
 
+	/*
+	struct Camera
+	{
+		float camera_x;
+		float camera_y;
+	};
+	Camera camera;
+	*/
+	Vector2D camera;
+
 private:
 	
 	Vector2D position;

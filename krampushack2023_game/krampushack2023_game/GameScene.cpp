@@ -30,6 +30,7 @@ bool GameScene::Update(const InputState& keyboard_state, ALLEGRO_EVENT event, in
 void GameScene::Draw()
 {
 	// Send sprites to player draw function
+	al_draw_bitmap(sprites[1], 0-player.camera.x, 0-player.camera.y, 0);
 	player.draw(sprites[0]);
 }
 
@@ -51,7 +52,8 @@ void GameScene::ResetScene()
 void GameScene::setupFilepaths()
 {
 	// player sprite 1
-	image_resources.push_back("../data/scary_gnome_crab1.png");
+	image_resources.push_back("../data/player1.png");
+	image_resources.push_back("../data/background1.png");
 }
 
 void GameScene::loadResources()

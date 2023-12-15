@@ -3,6 +3,8 @@
 
 int SCREEN_W{ 800 };
 int SCREEN_H{ 600 };
+int PLAYER_WIDTH{ 64 };
+int PLAYER_HEIGHT{ 64 };
 
 int main(int argc, char const** argv)
 {
@@ -23,7 +25,7 @@ int main(int argc, char const** argv)
 	bool running{ true };
 	bool draw{ false };
 	while (running) {
-
+		std::cout << al_get_display_width(display) << ", " << al_get_display_height(display) << "\n";
 		ALLEGRO_EVENT ev;
 		al_wait_for_event(queue, &ev);
 
@@ -66,17 +68,22 @@ int main(int argc, char const** argv)
 
 			std::string fps_text = "FPS: " + std::to_string(fps);
 
-			// draw fps
-			al_draw_text(font, al_map_rgb(255, 255, 255), 0, 0, 0, fps_text.c_str());
-
 			// Main draw
 			director.Draw();
+
+			// draw fps
+			al_draw_text(font, al_map_rgb(255, 255, 255), 0, 0, 0, fps_text.c_str());
 
 			al_flip_display();
 
 			draw = false;
 		}
 	}
+	
+	al_destroy_font(font);
+	al_destroy_display(display);
+	al_destroy_timer(timer);
+	al_destroy_event_queue(queue);
 	return 0;
 }
 

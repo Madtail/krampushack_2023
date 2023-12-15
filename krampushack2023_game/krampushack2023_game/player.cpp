@@ -4,8 +4,10 @@
 
 Player::Player()
 {
-	position.x = (SCREEN_W / 2);
-	position.y = (SCREEN_H / 2);
+
+	position.x = NULL;
+	position.y = NULL;
+	camera = 0;
 }
 
 Player::~Player()
@@ -66,11 +68,17 @@ void Player::update(const InputState &keyboardState, ALLEGRO_EVENT event, int pl
 
 		//std::cout << "Velocity: " << velocity.Magnitude() << "\n";
 		std::cout << "Position: " << position.x << "," << position.y << "\n";
-		position += velocity;
+		camera += velocity;
 }
 
 void Player::draw(ALLEGRO_BITMAP* playerSprite)
 {
+	if (position.x == NULL && position.y == NULL)
+	{
+		position.x = (SCREEN_W / 2) - PLAYER_WIDTH/2;
+		position.y = (SCREEN_H / 2) - PLAYER_HEIGHT/2;
+	}
+
 	al_draw_bitmap(playerSprite, position.x, position.y, 0);
 }
 
