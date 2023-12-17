@@ -33,6 +33,9 @@ public:
 	*/
 	Vector2D camera;
 
+	Rect playerArea;
+	Rect playerCollider;
+
 private:
 	
 	Vector2D position;

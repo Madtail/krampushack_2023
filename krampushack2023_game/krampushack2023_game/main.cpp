@@ -5,6 +5,8 @@ int SCREEN_W{ 800 };
 int SCREEN_H{ 600 };
 int PLAYER_WIDTH{ 64 };
 int PLAYER_HEIGHT{ 64 };
+int BACKGROUND_WIDTH{ 3840 };
+int BACKGROUND_HEIGHT{ 2160 };
 
 int main(int argc, char const** argv)
 {
@@ -25,7 +27,6 @@ int main(int argc, char const** argv)
 	bool running{ true };
 	bool draw{ false };
 	while (running) {
-		std::cout << al_get_display_width(display) << ", " << al_get_display_height(display) << "\n";
 		ALLEGRO_EVENT ev;
 		al_wait_for_event(queue, &ev);
 
@@ -134,4 +135,49 @@ void startSystems()
 
 	SCREEN_W = al_get_display_width(display);
 	SCREEN_H = al_get_display_height(display);
+}
+
+bool collide(Rect a, Rect b)
+{
+	//The sides of the rectangles
+	int leftA, leftB;
+	int rightA, rightB;
+	int topA, topB;
+	int bottomA, bottomB;
+
+	//Calculate the sides of rect A
+	leftA = a.x;
+	rightA = a.x + a.w;
+	topA = a.y;
+	bottomA = a.y + a.h;
+
+	//Calculate the sides of rect B
+	leftB = b.x;
+	rightB = b.x + b.w;
+	topB = b.y;
+	bottomB = b.y + b.h;
+
+	//If any of the sides from A are outside of B
+	if (bottomA <= topB)
+	{
+		return false;
+	}
+
+	if (topA >= bottomB)
+	{
+		return false;
+	}
+
+	if (rightA <= leftB)
+	{
+		return false;
+	}
+
+	if (leftA >= rightB)
+	{
+		return false;
+	}
+
+	//If none of the sides from A are outside B
+	return true;
 }

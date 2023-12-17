@@ -30,6 +30,8 @@ private:
 	void setupFilepaths();
 	void loadResources();
 
+	bool start;
+
 	Player player;
 };
 
