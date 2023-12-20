@@ -2,9 +2,11 @@
 #ifndef PLAYER_H
 #define PLAYER_H
 
+#include <math.h>
 #include "globals.h"
 #include "input.h"
 #include "Vector2D.h"
+
 
 class Player
 {
@@ -38,6 +40,9 @@ public:
 
 private:
 	
+	bool playerWithinScreen();
+	bool updatePlayerPosition();
+
 	Vector2D position;
 	Vector2D velocity;
 

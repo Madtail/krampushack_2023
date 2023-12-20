@@ -30,11 +30,9 @@ bool GameScene::Update(const InputState& keyboard_state, ALLEGRO_EVENT event, in
 
 void GameScene::Draw()
 {
-	// Center background
-	
 
 	// Send sprites to player draw function
-	al_draw_bitmap(sprites[1], ((SCREEN_W/2)-BACKGROUND_WIDTH/2)-player.camera.x, ((SCREEN_H / 2) - BACKGROUND_HEIGHT / 2) -player.camera.y, 0);
+	al_draw_bitmap(sprites[1], ((SCREEN_W/2)-BACKGROUND_WIDTH/2) - player.camera.x, ((SCREEN_H / 2) - BACKGROUND_HEIGHT / 2) - player.camera.y, 0);
 	player.draw(sprites[0]);
 }
 
