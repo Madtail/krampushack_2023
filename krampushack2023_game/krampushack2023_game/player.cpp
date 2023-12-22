@@ -135,8 +135,6 @@ void Player::update(const InputState &keyboardState, ALLEGRO_EVENT event, int pl
 			camera.y -= velocity.y;
 		}
 
-		
-
 		playerCollider.x = position.x;
 		playerCollider.y = position.y;
 }

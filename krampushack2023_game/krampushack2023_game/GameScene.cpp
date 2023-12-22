@@ -54,7 +54,7 @@ void GameScene::ResetScene()
 void GameScene::setupFilepaths()
 {
 	// player sprite 1
-	image_resources.push_back("../data/player1.png");
+	image_resources.push_back("../data/player2.png");
 	image_resources.push_back("../data/background2.png");
 }
 
